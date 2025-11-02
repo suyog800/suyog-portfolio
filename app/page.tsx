@@ -152,11 +152,11 @@ function Experience() {
   );
 }
 
-type Project = { name: string; blurb: string; tags: string[]; gallery: string[] };
+type Project = { name: string; blurb: string; tags: string[]; gallery: { src: string; caption?: string }[] };
 
 function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const [lightbox, setLightbox] = useState<{ images: string[]; index: number; title: string } | null>(null);
+  const [lightbox, setLightbox] = useState<{ images: { src: string; caption?: string }[]; index: number; title: string } | null>(null);
 
   useEffect(() => {
     fetch("/projects/manifest.json")
@@ -177,7 +177,7 @@ function Projects() {
       ) : (
         <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => {
-            const cover = p.gallery[0];
+            const cover = p.gallery[0]?.src || "";
             return (
               <motion.article key={i} variants={item} className="card hover:-translate-y-1 hover:shadow-md transition cursor-pointer"
                               onClick={() => openLightbox(p.gallery, 0, p.name)} title="Click to view gallery">
@@ -287,7 +287,7 @@ function Footer() {
 }
 
 function Lightbox({ title, images, index, onClose, onPrev, onNext }: {
-  title: string; images: string[]; index: number;
+  title: string; images: { src: string; caption?: string }[]; index: number;
   onClose: () => void; onPrev: () => void; onNext: () => void;
 }) {
   useEffect(() => {
@@ -308,9 +308,11 @@ function Lightbox({ title, images, index, onClose, onPrev, onNext }: {
         <button aria-label="Next" onClick={onNext} className="absolute right-2 top-1/2 -translate-y-1/2 btn btn-outline text-white/90 border-white/30 hover:bg-white/10">→</button>
         <button aria-label="Close" onClick={onClose} className="absolute top-2 right-2 btn btn-outline text-white/90 border-white/30 hover:bg-white/10">✕</button>
         <div className="absolute inset-0">
-          <Image src={`/projects/${images[index]}`} alt={`${title} – ${index + 1}/${images.length}`} fill className="object-contain" priority />
+          <Image src={`/projects/${images[index].src}`} alt={`${title} – ${index + 1}/${images.length}`} fill className="object-contain" priority />
         </div>
       </div>
     </motion.div>
   );
 }
+
+

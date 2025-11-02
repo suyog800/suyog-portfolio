@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#14b8a6"/><stop offset="1" stop-color="#0ea5e9"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial" font-size="72" fill="#fff">Suyog Chougule</text>
+  <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-family="Segoe UI, Arial" font-size="36" fill="#e6fffb">Embedded Systems • Robotics • ROS2</text>
+</svg>
