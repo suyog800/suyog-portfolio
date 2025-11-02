@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev","manifest":"node ./scripts/generate-manifest.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
