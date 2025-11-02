@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Font hook from next/font */
+:root { --font-inter: ui-sans-serif; }
+.font-sans { font-family: var(--font-inter), system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+
+/* Smooth scrolling + subtle selection */
+html { scroll-behavior: smooth; }
+::selection { background: rgba(45, 212, 191, .35); }
+
+/* Light/dark surface tokens */
+:root {
+  --surface: 255 255 255;
+  --surface-2: 250 250 250;
+  --border: 228 228 231;
+  --text-muted: 113 113 122;
+}
+.dark:root {
+  --surface: 9 9 11;
+  --surface-2: 24 24 27;
+  --border: 39 39 42;
+  --text-muted: 161 161 170;
+}
+
+/* Reusable card */
+.card {
+  @apply rounded-3xl border p-6 shadow-sm;
+  border-color: rgb(var(--border));
+  background: rgba(var(--surface), .6);
+  backdrop-filter: blur(8px);
+}
+
+/* Buttons */
+.btn { @apply inline-flex items-center justify-center rounded-2xl px-3 py-2 text-sm font-medium transition; }
+.btn-outline { @apply border; border-color: rgb(var(--border)); }
+.btn-outline:hover { @apply bg-zinc-100 dark:bg-zinc-800; }
+.btn-primary { @apply text-white shadow-sm; background: rgb(20 184 166); }
+.btn-primary:hover { background: rgb(13 148 136); }

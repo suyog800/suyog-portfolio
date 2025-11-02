@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Roscon 2024",
+    "blurb": "",
+    "tags": [],
+    "gallery": [
+      "roscon-2024/IMG_3766.jpeg",
+      "roscon-2024/IMG_3767.jpeg",
+      "roscon-2024/IMG_3770.jpeg",
+      "roscon-2024/IMG_3771.jpeg",
+      "roscon-2024/IMG_3772.jpeg",
+      "roscon-2024/IMG_3774.jpeg",
+      "roscon-2024/IMG_3775.jpeg",
+      "roscon-2024/IMG_3776.jpeg",
+      "roscon-2024/IMG_3777.jpeg"
+    ]
+  },
+  {
+    "name": "Twara Baseboard",
+    "blurb": "",
+    "tags": [],
+    "gallery": [
+      "twara-baseboard/IMG_20241128_172042.jpg",
+      "twara-baseboard/twara state machine front.jpg",
+      "twara-baseboard/Twara state Machine.jpg"
+    ]
+  },
+  {
+    "name": "Usb To Can",
+    "blurb": "",
+    "tags": [],
+    "gallery": [
+      "usb-to-can/usb to can converter.jpg"
+    ]
+  }
+]
